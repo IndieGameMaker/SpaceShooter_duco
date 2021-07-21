@@ -33,9 +33,12 @@ public class PlayerCtrl : MonoBehaviour
         Vector3.zero    = Vector3(0, 0, 0)        
         */
 
-        transform.Translate(Vector3.forward * 0.1f * v);
-        transform.Translate(Vector3.right * 0.1f * h);
-        //transform.position += new Vector3(0.0f, 0.0f, 0.1f);
+        Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
+        transform.Translate(dir.normalized * 0.1f);
+
+        // transform.Translate(Vector3.forward * 0.1f * v);
+        // transform.Translate(Vector3.right * 0.1f * h);
+        // transform.position += new Vector3(0.0f, 0.0f, 0.1f);
 
     }
 }
