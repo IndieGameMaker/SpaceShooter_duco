@@ -21,7 +21,8 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log("h=" + h);
         Debug.Log("v=" + v);
 
-        transform.position += new Vector3(0.0f, 0.0f, 0.1f);
+        transform.Translate(Vector3.forward * 0.1f * v);
+        //transform.position += new Vector3(0.0f, 0.0f, 0.1f);
 
     }
 }
