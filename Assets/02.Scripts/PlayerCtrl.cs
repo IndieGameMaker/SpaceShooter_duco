@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    float h;    // 실수값을 저장할 수 있는 변수 선언
-    float v;
+    private float h;    // 실수값을 저장할 수 있는 변수 선언
+    private float v;
 
-    //  1회 호출
+    // 전역변수
+    public float moveSpeed = 8.0f;
+
     void Start()
     {
 
@@ -34,11 +36,6 @@ public class PlayerCtrl : MonoBehaviour
         */
 
         Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
-        transform.Translate(dir.normalized * 0.1f);
-
-        // transform.Translate(Vector3.forward * 0.1f * v);
-        // transform.Translate(Vector3.right * 0.1f * h);
-        // transform.position += new Vector3(0.0f, 0.0f, 0.1f);
-
+        transform.Translate(dir.normalized * Time.deltaTime * moveSpeed);
     }
 }
