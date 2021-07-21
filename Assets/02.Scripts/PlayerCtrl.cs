@@ -16,8 +16,8 @@ public class PlayerCtrl : MonoBehaviour
     // 화면을 랜더링하는 주기
     void Update()
     {
-        h = Input.GetAxis("Horizontal");
-        v = Input.GetAxis("Vertical");
+        h = Input.GetAxis("Horizontal"); // -1.0f ~ 0.0f ~ +1.0f
+        v = Input.GetAxis("Vertical"); // -1.0f ~ 0.0f ~ +1.0f
         Debug.Log("h=" + h);
         Debug.Log("v=" + v);
 
