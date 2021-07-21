@@ -7,12 +7,16 @@ public class PlayerCtrl : MonoBehaviour
     private float h;    // 실수값을 저장할 수 있는 변수 선언
     private float v;
 
+    // 접근제한자 
+    // public / private
     // 전역변수
     public float moveSpeed = 8.0f;
+    public Animation anim;
 
     void Start()
     {
-
+        anim = this.gameObject.GetComponent<Animation>();
+        anim.Play("Idle");
     }
 
     // 화면을 랜더링하는 주기
