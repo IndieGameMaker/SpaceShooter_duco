@@ -11,7 +11,7 @@ public class PlayerCtrl : MonoBehaviour
     // public / private
     // 전역변수
     public float moveSpeed = 8.0f;
-    public Animation anim;
+    private Animation anim;
 
     void Start()
     {
@@ -41,5 +41,16 @@ public class PlayerCtrl : MonoBehaviour
 
         Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
         transform.Translate(dir.normalized * Time.deltaTime * moveSpeed);
+
+        PlayerAnim();
+    }
+
+    void PlayerAnim()
+    {
+        if (v >= 0.1f)
+        {
+            //전진
+
+        }
     }
 }
