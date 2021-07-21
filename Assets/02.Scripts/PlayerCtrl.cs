@@ -22,6 +22,7 @@ public class PlayerCtrl : MonoBehaviour
         Debug.Log("v=" + v);
 
         transform.Translate(Vector3.forward * 0.1f * v);
+        transform.Translate(Vector3.right * 0.1f * h);
         //transform.position += new Vector3(0.0f, 0.0f, 0.1f);
 
     }
