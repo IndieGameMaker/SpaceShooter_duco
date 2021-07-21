@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
+    float h;    // 실수값을 저장할 수 있는 변수 선언
+    float v;
+
     //  1회 호출
     void Start()
     {
@@ -13,7 +16,10 @@ public class PlayerCtrl : MonoBehaviour
     // 화면을 랜더링하는 주기
     void Update()
     {
+        h = Input.GetAxis("Horizontal");
+        Debug.Log("h=" + h);
+
         transform.position += new Vector3(0.0f, 0.0f, 0.1f);
-        //transform.position = transform.position + new Vector3(0.0f, 1.0f, 0.1f);
+
     }
 }
