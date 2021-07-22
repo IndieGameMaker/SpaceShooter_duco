@@ -9,6 +9,13 @@ public class FireCtrl : MonoBehaviour
     // 총알을 생성할 위치정보를 저장할 변수
     public Transform firePos;
 
+    private new AudioSource audio;
+
+    void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
     // Update is called once per frame
     void Update()
     {
