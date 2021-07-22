@@ -24,9 +24,18 @@ public class BarrelCtrl : MonoBehaviour
     void Start()
     {
         // 텍스처 -> 머티리얼 -> 메시(Mesh)
-        // MeshRenderer 컴포넌트 접근 (메시랜더러.머티리얼 = 텍스처)
         // 자신의 하위에 있는 MeshRenderer 컴포넌트를 추출
         renderer = this.gameObject.GetComponentInChildren<MeshRenderer>();
+
+        // 난수 발생
+        /*
+            Random.Range(1, 10)       --> 1, 2, 3, ..., 9
+            Random.Range(1.0f, 10.0f) --> 1.0f , ..., 10.0f.
+        */
+        int idx = Random.Range(0, textures.Length); //(0, 3) --> 0, 1, 2
+
+        // MeshRenderer 컴포넌트 접근 (메시랜더러.머티리얼.텍스처 = 텍스처)
+        renderer.material.mainTexture = textures[idx];
     }
 
     void OnCollisionEnter(Collision coll)
