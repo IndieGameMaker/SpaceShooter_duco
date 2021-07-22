@@ -5,6 +5,10 @@ using UnityEngine;
 public class BarrelCtrl : MonoBehaviour
 {
     private int hitCount = 0;
+    // 배열 타입 (Array Type)
+    public int[] monsterPower;
+    public string[] monsterName;
+    public float[] monsterDamage;
 
     void OnCollisionEnter(Collision coll)
     {
