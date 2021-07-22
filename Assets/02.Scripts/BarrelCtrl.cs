@@ -21,6 +21,9 @@ public class BarrelCtrl : MonoBehaviour
     [SerializeField]
     private new MeshRenderer renderer;
 
+    // 폭발효과 프리팹을 저장할 변수
+    public GameObject expEffect;
+
     void Start()
     {
         // 텍스처 -> 머티리얼 -> 메시(Mesh)
@@ -57,5 +60,8 @@ public class BarrelCtrl : MonoBehaviour
         rb.AddForce(Vector3.up * 2000.0f);
         // 3초후에 베럴을 삭제
         Destroy(this.gameObject, 3.0f);
+
+        // 폭발효과 프리팹을 생성
+        Instantiate(expEffect, transform.position, transform.rotation);
     }
 }
