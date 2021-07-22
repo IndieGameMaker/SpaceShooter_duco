@@ -20,8 +20,8 @@ public class RemoveBullet : MonoBehaviour
             // 쿼터니언(Quaternion) : 유니티에서 사용하는 각도의 단위
             Quaternion rot = Quaternion.LookRotation(-normal);
 
-            Instantiate(sparkEffect, pos, rot);
-
+            GameObject spark = Instantiate(sparkEffect, pos, rot);
+            Destroy(spark, 0.3f);
 
 
             // 총알 삭제
