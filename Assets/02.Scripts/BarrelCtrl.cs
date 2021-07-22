@@ -7,8 +7,14 @@ public class BarrelCtrl : MonoBehaviour
     private int hitCount = 0;
     // 배열 타입 (Array Type)
     public int[] monsterPower;
+    // monsterPower[2] --> 300
     public string[] monsterName;
+    // monsterName[1] --> "Goblin"
     public float[] monsterDamage;
+
+    // 텍스처(Texture)를 저장하기 위한 배열을 선언
+    public Texture[] textures;
+    // textures[0], textures[1], .... textures[99]
 
     void OnCollisionEnter(Collision coll)
     {
