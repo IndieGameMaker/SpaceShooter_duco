@@ -8,7 +8,7 @@ public class RemoveBullet : MonoBehaviour
 
     void OnCollisionEnter(Collision coll)
     {
-        if (coll.collider.tag == "BULLET")
+        if (coll.collider.tag == "BULLET")  // X
         {
             // 충돌 지점
             Vector3 pos = coll.GetContact(0).point;
