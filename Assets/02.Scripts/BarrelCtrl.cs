@@ -5,7 +5,9 @@ using UnityEngine;
 public class BarrelCtrl : MonoBehaviour
 {
     private int hitCount = 0;
+
     // 배열 타입 (Array Type)
+    [System.NonSerialized]
     public int[] monsterPower;
     // monsterPower[2] --> 300
     public string[] monsterName;
