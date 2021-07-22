@@ -16,6 +16,14 @@ public class BarrelCtrl : MonoBehaviour
     public Texture[] textures;
     // textures[0], textures[1], .... textures[99]
 
+    private new MeshRenderer renderer;
+
+    void Start()
+    {
+        // 텍스처 -> 머티리얼 -> 메시(Mesh)
+        // MeshRenderer 컴포넌트 접근 (메시랜더러.머티리얼 = 텍스처)
+    }
+
     void OnCollisionEnter(Collision coll)
     {
         if (coll.collider.CompareTag("BULLET"))  // O
