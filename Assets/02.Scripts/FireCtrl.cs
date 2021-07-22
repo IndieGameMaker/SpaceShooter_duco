@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class FireCtrl : MonoBehaviour
 {
     // 총알 프리팹을 저장할 변수
