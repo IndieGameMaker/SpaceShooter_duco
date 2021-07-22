@@ -18,7 +18,7 @@ public class RemoveBullet : MonoBehaviour
             // 스파크 이펙트 생성
             // Instantiate(생성할 객체, 좌표, 각도)
             // 쿼터니언(Quaternion) : 유니티에서 사용하는 각도의 단위
-            Quaternion rot = Quaternion.LookRotation(normal);
+            Quaternion rot = Quaternion.LookRotation(-normal);
 
             Instantiate(sparkEffect, pos, rot);
 
