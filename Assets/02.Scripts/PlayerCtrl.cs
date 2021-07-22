@@ -6,6 +6,7 @@ public class PlayerCtrl : MonoBehaviour
 {
     private float h;    // 실수값을 저장할 수 있는 변수 선언
     private float v;
+    private float r;    // 좌위 회전값을 저장할 변수 선언
 
     // 접근제한자 
     // public / private
@@ -24,11 +25,13 @@ public class PlayerCtrl : MonoBehaviour
     {
         h = Input.GetAxis("Horizontal"); // -1.0f ~ 0.0f ~ +1.0f
         v = Input.GetAxis("Vertical"); // -1.0f ~ 0.0f ~ +1.0f
+        r = Input.GetAxis("Mouse X");
         Debug.Log("h=" + h);
         Debug.Log("v=" + v);
 
         Vector3 dir = (Vector3.forward * v) + (Vector3.right * h);
         transform.Translate(dir.normalized * Time.deltaTime * moveSpeed);
+        transform.Rotate(Vector3.up * Time.deltaTime * 100.0f * r);
 
         PlayerAnim();
     }
