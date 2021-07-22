@@ -6,7 +6,11 @@ public class RemoveBullet : MonoBehaviour
 {
     void OnCollisionEnter(Collision coll)
     {
-        Debug.Log(coll.collider.name);
+        if (coll.collider.tag == "BULLET")
+        {
+            // 총알 삭제
+            Destroy(coll.gameObject);
+        }
     }
 
 
