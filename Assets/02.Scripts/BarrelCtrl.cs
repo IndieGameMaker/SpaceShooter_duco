@@ -61,7 +61,12 @@ public class BarrelCtrl : MonoBehaviour
         // 3초후에 베럴을 삭제
         Destroy(this.gameObject, 3.0f);
 
+        // 폭발효과의 불규칙한 회전값을 생성
+        Quaternion rot = Quaternion.Euler(0, Random.Range(0, 360), 0);
+        // Quaternion rot = Quaternion.Euler(Vector3.up * Random.Range(0,360));
+
         // 폭발효과 프리팹을 생성
-        Instantiate(expEffect, transform.position, transform.rotation);
+        GameObject exp = Instantiate(expEffect, transform.position, rot);
+        Destroy(exp, 5.0f);
     }
 }
