@@ -40,6 +40,7 @@ public class MonsterCtrl : MonoBehaviour
     void Update()
     {
         CheckMonsterState();
+        MonsterAction();
     }
 
     void CheckMonsterState()
@@ -60,5 +61,49 @@ public class MonsterCtrl : MonoBehaviour
         {
             state = State.IDLE;
         }
+    }
+
+    // 몬스터의 상태변수(state) 값에 따라서 행동을 명령
+    void MonsterAction()
+    {
+        // Switch 구문은 state 값에 따라서 분기 처리하는 문법
+        switch (state)
+        {
+            case State.IDLE:
+                // 로직 1
+                break;
+
+            case State.TRACE:
+                // 로직 2
+                break;
+
+            case State.ATTACK:
+                // 로직 3
+                break;
+
+            case State.DIE:
+                //로직 4
+                break;
+        }
+
+
+        /*
+        if (state == State.IDLE)
+        {
+
+        }
+        else if (state == State.TRACE)
+        {
+
+        }
+        else if (state == State.ATTACK)
+        {
+
+        }
+        else if (state == State.DIE)
+        {
+
+        }
+        */
     }
 }
