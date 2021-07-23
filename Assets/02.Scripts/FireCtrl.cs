@@ -50,6 +50,8 @@ public class FireCtrl : MonoBehaviour
     {
         // MuzzleFlash Offset을 변경
         Vector2 offset = new Vector2(Random.Range(0, 2), Random.Range(0, 2)) * 0.5f;
+        //muzzleFlash.material.SetTextureOffset("_MainTxt", offset);
+        muzzleFlash.material.mainTextureOffset = offset;
 
 
         // MuzzleFlash를 활성
