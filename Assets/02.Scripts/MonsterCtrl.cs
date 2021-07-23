@@ -17,7 +17,7 @@ public class MonsterCtrl : MonoBehaviour
         // playerObject의 Transform 컴포넌트를 추출해서 playerTr 변수에 저장
         playerTr = playerObject.GetComponent<Transform>();
 
-        //playerTr = GameObject.FindGameObjectWithTag("PLAYER").GetComponent<Transform>();
+        monsterTr = this.gameObject.GetComponent<Transform>();
     }
 
     // Update is called once per frame
