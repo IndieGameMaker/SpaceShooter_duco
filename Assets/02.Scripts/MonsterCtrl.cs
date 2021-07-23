@@ -28,6 +28,10 @@ public class MonsterCtrl : MonoBehaviour
     // 추적 사정거리
     public float traceDist = 10.0f;
 
+    // Animator Parameters를 빠르게 접근하기 위해 해시값을 미리 추출
+    private int hashIsTrace = Animator.StringToHash("IsTrace");
+    private int hashIsAttack = Animator.StringToHash("IsAttack");
+
     void Start()
     {
         // PLAYER 태그로 지정된 게임오브젝트를 추출해서 playerObject에 저장
@@ -76,7 +80,7 @@ public class MonsterCtrl : MonoBehaviour
             case State.IDLE:
                 // 로직 1
                 agent.isStopped = true;
-                anim.SetBool("IsTrace", false);
+                anim.SetBool(hashIsTrace, false);
                 break;
 
             case State.TRACE:
@@ -84,11 +88,13 @@ public class MonsterCtrl : MonoBehaviour
                 agent.SetDestination(playerTr.position);
                 agent.isStopped = false;
                 // 애니메이션을 Walk로 변경
-                anim.SetBool("IsTrace", true);
+                anim.SetBool(hashIsTrace, true);
+                anim.SetBool(hashIsAttack, false);
                 break;
 
             case State.ATTACK:
-                // 로직 3
+                agent.isStopped = true;
+                anim.SetBool(hashIsAttack, true);
                 break;
 
             case State.DIE:
