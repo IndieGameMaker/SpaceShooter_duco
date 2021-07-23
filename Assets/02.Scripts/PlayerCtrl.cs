@@ -62,7 +62,7 @@ public class PlayerCtrl : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
-        if (coll.CompareTag("PUNCH"))
+        if (hp > 0.0f && coll.CompareTag("PUNCH"))
         {
             hp -= 10.0f;
             if (hp <= 0.0f)
