@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BULLET
   - PLAYER
+  - PUNCH
   layers:
   - Default
   - TransparentFX
