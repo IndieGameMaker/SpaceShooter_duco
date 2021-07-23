@@ -150,6 +150,13 @@ public class MonsterCtrl : MonoBehaviour
 
     void MonsterDie()
     {
+        isDie = true;
+        // 현재 실행중인 모든 코루틴 함수를 정지
+        StopAllCoroutines();
 
+        // 사망 애니메이션
+        anim.SetTrigger("Die");
+        // 네비게이션을 정지
+        agent.isStopped = true;
     }
 }
