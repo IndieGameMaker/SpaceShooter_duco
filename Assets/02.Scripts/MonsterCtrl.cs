@@ -39,6 +39,23 @@ public class MonsterCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 주인공과 몬스터간의 거리를 계산해서 변수 저장
+        float distance = Vector3.Distance(playerTr.position, monsterTr.position);
+
+        //1) 거리 <= 공격 사정거리 이면 몬스트의 상태를 ATTACK으로 변경
+        if (distance <= attackDist)
+        {
+            state = State.ATTACK;
+        } //2) 거리 <= 추적 사정거리 이면 몬스트의 상태를 TRACE으로 변경
+        else if (distance <= traceDist)
+        {
+            state = State.TRACE;
+        } //3) 몬스트의 상태를 IDEL으로 변경
+        else
+        {
+            state = State.IDLE;
+        }
+
 
     }
 }
