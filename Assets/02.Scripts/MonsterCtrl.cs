@@ -6,8 +6,8 @@ public class MonsterCtrl : MonoBehaviour
 {
     // 거리계산을 위한 주인공의 위치, 몬스터의 위치
     // 주인공 캐릭터의 Transform 저장할 변수 선언
-    private Transform playerTr;
-    private Transform monsterTr;
+    [SerializeField] private Transform playerTr;
+    [SerializeField] private Transform monsterTr;
 
     void Start()
     {
