@@ -53,6 +53,9 @@ public class FireCtrl : MonoBehaviour
         //muzzleFlash.material.SetTextureOffset("_MainTxt", offset);
         muzzleFlash.material.mainTextureOffset = offset;
 
+        // MuzzleFlash 회전
+        Quaternion rot = Quaternion.Euler(Vector3.forward * Random.Range(0, 360));
+        muzzleFlash.transform.localRotation = rot;
 
         // MuzzleFlash를 활성
         muzzleFlash.enabled = true;
