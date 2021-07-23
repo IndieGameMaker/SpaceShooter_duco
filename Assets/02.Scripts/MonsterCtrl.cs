@@ -161,4 +161,13 @@ public class MonsterCtrl : MonoBehaviour
         // 컬라이더를 비활성화
         GetComponent<CapsuleCollider>().enabled = false;
     }
+
+    void YouWin()
+    {
+        if (isDie == true) return;
+
+        StopAllCoroutines();
+        anim.SetTrigger("Dance");
+        agent.isStopped = true;
+    }
 }
