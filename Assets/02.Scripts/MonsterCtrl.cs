@@ -32,6 +32,8 @@ public class MonsterCtrl : MonoBehaviour
     private int hashIsTrace = Animator.StringToHash("IsTrace");
     private int hashIsAttack = Animator.StringToHash("IsAttack");
 
+    public bool isDie = false;
+
     void Start()
     {
         // PLAYER 태그로 지정된 게임오브젝트를 추출해서 playerObject에 저장
@@ -42,14 +44,21 @@ public class MonsterCtrl : MonoBehaviour
         monsterTr = this.gameObject.GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+
+        StartCoroutine(MonsterBehaviour());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator MonsterBehaviour()
     {
-        CheckMonsterState();
-        MonsterAction();
+        // 무한 반복 루틴
+        while (isDie == false)
+        {
+            CheckMonsterState();
+            MonsterAction();
+            yield return new WaitForSeconds(0.3f);
+        }
     }
+
 
     void CheckMonsterState()
     {
