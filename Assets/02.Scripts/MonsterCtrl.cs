@@ -167,6 +167,7 @@ public class MonsterCtrl : MonoBehaviour
         if (isDie == true) return;
 
         StopAllCoroutines();
+        anim.SetFloat("DanceSpeed", Random.Range(0.8f, 1.5f));
         anim.SetTrigger("Dance");
         agent.isStopped = true;
     }
