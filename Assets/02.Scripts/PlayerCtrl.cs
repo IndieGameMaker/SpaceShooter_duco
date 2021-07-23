@@ -74,7 +74,7 @@ public class PlayerCtrl : MonoBehaviour
 
     void PlayerDie()
     {
-
+        Debug.Log("Player Die !!!");
     }
 
 
