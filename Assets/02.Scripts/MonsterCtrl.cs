@@ -4,10 +4,26 @@ using UnityEngine;
 
 public class MonsterCtrl : MonoBehaviour
 {
+    public enum State
+    {
+        IDLE,   // 휴면상태
+        TRACE,  // 추적상태
+        ATTACK, // 공격상태
+        DIE     // 사망상태
+    }
+
+    // 몬스터의 상태를 저장하는 변수
+    public State state = State.IDLE;
+
     // 거리계산을 위한 주인공의 위치, 몬스터의 위치
     // 주인공 캐릭터의 Transform 저장할 변수 선언
     [SerializeField] private Transform playerTr;
     [SerializeField] private Transform monsterTr;
+
+    // 공격 사정거리
+    public float attackDist = 2.0f;
+    // 추적 사정거리
+    public float traceDist = 10.0f;
 
     void Start()
     {
