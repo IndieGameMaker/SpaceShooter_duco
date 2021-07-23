@@ -34,6 +34,8 @@ public class MonsterCtrl : MonoBehaviour
 
     public bool isDie = false;
 
+    public float hp = 100.0f;
+
     void Start()
     {
         // PLAYER 태그로 지정된 게임오브젝트를 추출해서 playerObject에 저장
@@ -58,7 +60,6 @@ public class MonsterCtrl : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
         }
     }
-
 
     void CheckMonsterState()
     {
@@ -138,6 +139,17 @@ public class MonsterCtrl : MonoBehaviour
         {
             Destroy(coll.gameObject);
             anim.SetTrigger("Hit");
+
+            hp -= 20.0f; // hp = hp - 20.0f;
+            if (hp <= 0.0f)
+            {
+                MonsterDie();
+            }
         }
+    }
+
+    void MonsterDie()
+    {
+
     }
 }
