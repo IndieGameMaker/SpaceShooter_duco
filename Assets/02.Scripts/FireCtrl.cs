@@ -49,7 +49,9 @@ public class FireCtrl : MonoBehaviour
     void ShowMuzzleFlash()
     {
         // MuzzleFlash를 활성
+        muzzleFlash.enabled = true;
 
         // MuzzleFlash를 비활성
+        muzzleFlash.enabled = false;
     }
 }
