@@ -74,7 +74,13 @@ public class PlayerCtrl : MonoBehaviour
 
     void PlayerDie()
     {
-        Debug.Log("Player Die !!!");
+        // 스테이지에 있는 모든 몬스터를 추출
+        GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
+
+        for (int i = 0; i < monsters.Length; i++)
+        {
+            monsters[i].SendMessage("YouWin", SendMessageOptions.DontRequireReceiver);
+        }
     }
 
 
