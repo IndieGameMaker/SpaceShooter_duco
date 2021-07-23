@@ -158,5 +158,7 @@ public class MonsterCtrl : MonoBehaviour
         anim.SetTrigger("Die");
         // 네비게이션을 정지
         agent.isStopped = true;
+        // 컬라이더를 비활성화
+        GetComponent<CapsuleCollider>().enabled = false;
     }
 }
