@@ -21,6 +21,7 @@ public class MonsterCtrl : MonoBehaviour
     [SerializeField] private Transform playerTr;
     [SerializeField] private Transform monsterTr;
     [SerializeField] private NavMeshAgent agent;
+    private Animator anim;
 
     // 공격 사정거리
     public float attackDist = 2.0f;
@@ -36,6 +37,7 @@ public class MonsterCtrl : MonoBehaviour
         playerTr = playerObject.GetComponent<Transform>();
         monsterTr = this.gameObject.GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
