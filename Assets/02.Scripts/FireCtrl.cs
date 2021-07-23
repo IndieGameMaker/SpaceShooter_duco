@@ -48,6 +48,10 @@ public class FireCtrl : MonoBehaviour
     // 총구화염 효과를 깜빡거리는 로직 (코루틴)
     IEnumerator ShowMuzzleFlash()
     {
+        // MuzzleFlash Offset을 변경
+        Vector2 offset = new Vector2(Random.Range(0, 2), Random.Range(0, 2)) * 0.5f;
+
+
         // MuzzleFlash를 활성
         muzzleFlash.enabled = true;
         // Waiting...
