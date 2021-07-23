@@ -15,6 +15,9 @@ public class FireCtrl : MonoBehaviour
     // 음원파일을 저장할 변수를 선언
     public AudioClip fireSfx;
 
+    // MuzzleFlash 게임오브젝트에 추가된 MeshRenderer 컴포넌트를 저장할 변수
+    public MeshRenderer muzzleFlash;
+
     void Start()
     {
         audio = GetComponent<AudioSource>();
