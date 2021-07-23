@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MonsterCtrl : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class MonsterCtrl : MonoBehaviour
     // 주인공 캐릭터의 Transform 저장할 변수 선언
     [SerializeField] private Transform playerTr;
     [SerializeField] private Transform monsterTr;
+    [SerializeField] private NavMeshAgent agent;
 
     // 공격 사정거리
     public float attackDist = 2.0f;
@@ -32,8 +34,8 @@ public class MonsterCtrl : MonoBehaviour
 
         // playerObject의 Transform 컴포넌트를 추출해서 playerTr 변수에 저장
         playerTr = playerObject.GetComponent<Transform>();
-
         monsterTr = this.gameObject.GetComponent<Transform>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -71,10 +73,13 @@ public class MonsterCtrl : MonoBehaviour
         {
             case State.IDLE:
                 // 로직 1
+                agent.isStopped = true;
                 break;
 
             case State.TRACE:
                 // 로직 2 - Player 캐릭터를 추적 로직
+                agent.SetDestination(playerTr.position);
+                agent.isStopped = false;
                 break;
 
             case State.ATTACK:
