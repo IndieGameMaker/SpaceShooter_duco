@@ -14,6 +14,8 @@ public class PlayerCtrl : MonoBehaviour
     public float moveSpeed = 8.0f;
     private Animation anim;
 
+    private float hp = 100.0f;
+
     void Start()
     {
         anim = this.gameObject.GetComponent<Animation>();
@@ -60,7 +62,19 @@ public class PlayerCtrl : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
-        Debug.Log(coll.gameObject.name);
+        if (coll.CompareTag("PUNCH"))
+        {
+            hp -= 10.0f;
+            if (hp <= 0.0f)
+            {
+                PlayerDie();
+            }
+        }
+    }
+
+    void PlayerDie()
+    {
+
     }
 
 
