@@ -74,7 +74,7 @@ public class MonsterCtrl : MonoBehaviour
                 break;
 
             case State.TRACE:
-                // 로직 2
+                // 로직 2 - Player 캐릭터를 추적 로직
                 break;
 
             case State.ATTACK:
